@@ -1,9 +1,8 @@
 package edu.uci.ics.cs221.analysis;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import edu.uci.ics.cs221.analysis.StopWords;
+
+import java.util.*;
 
 /**
  * Project 1, task 1: Implement a simple tokenizer based on punctuations and white spaces.
@@ -27,7 +26,44 @@ public class PunctuationTokenizer implements Tokenizer {
     public PunctuationTokenizer() {}
 
     public List<String> tokenize(String text) {
-        throw new UnsupportedOperationException("Punctuation Tokenizer Unimplemented");
+        //throw new UnsupportedOperationException("Punctuation Tokenizer Unimplemented");
+        //List<String> tmp = Arrays.asList(text.toLowerCase().split("\\s+"));
+        text = text.toLowerCase();
+        char[] tmp = text.toCharArray();
+        punctuations.add(" ");
+        punctuations.add("\t");
+        punctuations.add("\n");
+        punctuations.add("\r");
+
+
+        StopWords stopwords = new StopWords();
+
+        List<String> res = new ArrayList<>();
+
+
+        int begin = 0, length = 0;
+
+        for(int i = 0; i <= text.length(); ++i){
+            if(i == text.length()||punctuations.contains(String.valueOf(tmp[i]))){
+                if(length != 0){
+                    if(!stopwords.stopWords.contains(text.substring(begin, begin + length))){
+                        res.add(text.substring(begin, begin + length));
+                    }
+                    length = 0;
+                }
+            }
+            else{
+                if(length == 0){
+                    begin = i;
+                }
+                ++length;
+            }
+
+        }
+        if(res.isEmpty())System.out.println("Attention the output is empty");
+        return res;
+
     }
 
 }
+
