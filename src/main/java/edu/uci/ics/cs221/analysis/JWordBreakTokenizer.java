@@ -11,14 +11,9 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 
-/**
- *Tokenizing Chinese or Japanese text is challenging because there are no explicit spaces between words. It is very similar to the word-break problem in task 2.
- *
- *Use the same dictionary-frequency and dynamic programming based algorithm in task 2 to implement a Chinese or Japanese Tokenizer. For fairness, you must choose a language that is NOT your native language.
- *
- *You need to find a Chinese or Japanese dictionary corpus with frequency information on your own, and write at least 3 test cases to test the correctness of your tokenizer.
- *
- */
+/*
+Testcase: src/test/java/edu/uci/ics/cs221/analysis/wordbreak/Team8JWordBreakTokenizerTest.java
+*/
 
 public class JWordBreakTokenizer extends WordBreakTokenizer implements Tokenizer {
 
