@@ -51,6 +51,7 @@ public class Team8KeywordSearchTest {
             assertEquals(results.next().getText(), expected.get(i).getText());
         }
     }
+    
     //test empty query word, the result should be empty
     @Test
     public void test2(){
@@ -58,7 +59,6 @@ public class Team8KeywordSearchTest {
 
         Iterator<Document> results = indexManager.searchQuery(query);
         assertFalse(results.hasNext());
-
     }
 
     //test when query word is not in inverted list
@@ -68,8 +68,8 @@ public class Team8KeywordSearchTest {
 
         Iterator<Document> results = indexManager.searchQuery(query);
         assertFalse(results.hasNext());
-
     }
+    
     //delete segment files after test
     @After
     public void delete(){
