@@ -70,7 +70,7 @@ public class Team8KeywordSearchTest {
         assertFalse(results.hasNext());
 
     }
-
+    //delete segment files after test
     @After
     public void delete(){
         File files = new File(pathname);
