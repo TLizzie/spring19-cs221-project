@@ -24,6 +24,7 @@ import static edu.uci.ics.cs221.storage.MapdbDocStore.createOrOpen;
 public class HelloWorld {
 
     public static void main(String[] args) throws Exception {
+        System.out.println("hello worrrrrrrd");
         String docStorePath = "./docs.db";
         Files.deleteIfExists(Paths.get(docStorePath));
 
