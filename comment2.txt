@@ -1,0 +1,13 @@
+What's your team number?
+Team 8
+
+What is the functionality being tested?
+Single Keyword research
+
+Describe your tests briefly:
+**Test 1**: test if the program works when doing single word searching.
+**Test 2**: test if the program returns an empty list of Document when the query is empty.
+**Test 3**: test if the program returns an empty list of Document when the query word is not in any document.
+
+Does each test case have comments/documentation?
+Yes
